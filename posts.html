@@ -18,8 +18,11 @@
 
 <main class="section">
   <div class="container">
+    <!-- ✅ Search Box -->
+    <input type="text" id="searchBox" placeholder="Search posts..." class="search-box" />
+
     <h2>Explore All Posts</h2>
-    <div class="grid">
+    <div class="grid" id="postsGrid">
       <article class="card">
         <span class="badge">🎬 Movies</span>
         <h3><a href="posts/movie-review.html">Weekend Box Office Review</a></h3>
@@ -40,10 +43,54 @@
   </div>
 </main>
 
+<!-- ✅ Editor’s Picks Section -->
+<section class="section">
+  <div class="container">
+    <h2>Editor's Picks</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge">🎬 Movies</span>
+        <h3><a href="posts/movie-review.html">Box Office Breakdown</a></h3>
+        <p>Top performing films this week with expert notes.</p>
+      </article>
+      <article class="card">
+        <span class="badge">🎵 Music</span>
+        <h3><a href="posts/music-update.html">Chart Movers</a></h3>
+        <p>Tracks that are making waves right now.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container footer-inner">
+    <!-- ✅ Social Links -->
+    <div class="social-links">
+      <a href="#">Instagram</a> • 
+      <a href="#">YouTube</a> • 
+      <a href="#">Twitter</a>
+    </div>
     <p class="muted">© 2025 FunStream</p>
   </div>
 </footer>
+
+<!-- ✅ JavaScript for Live Search -->
+<script>
+  const searchBox = document.getElementById('searchBox');
+  const postsGrid = document.getElementById('postsGrid');
+  const cards = postsGrid.getElementsByTagName('article');
+
+  searchBox.addEventListener('keyup', function() {
+    const query = this.value.toLowerCase();
+    for (let i = 0; i < cards.length; i++) {
+      const text = cards[i].innerText.toLowerCase();
+      if (text.includes(query)) {
+        cards[i].style.display = '';
+      } else {
+        cards[i].style.display = 'none';
+      }
+    }
+  });
+</script>
 </body>
-</html>
+  </html>
