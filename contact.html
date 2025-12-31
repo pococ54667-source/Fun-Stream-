@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — FunStream</title>
+  <meta name="description" content="Contact FunStream for tips, feedback, or collaboration inquiries." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><span class="logo-dot"></span><a href="/" class="brand-name">FunStream</a></div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/">Home</a><a href="/posts/">Posts</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions"><a class="btn btn-outline" href="/">Home</a></div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card">
+        <span class="badge">Contact</span>
+        <h1>Get in touch</h1>
+        <p>We welcome feedback, tips, and collaboration requests. Reach us directly using the details below.</p>
+
+        <div class="cta" style="margin-top:16px">
+          <h3>Email</h3>
+          <p class="muted">Send us a message anytime.</p>
+          <p><a class="btn btn-primary" href="mailto:funstream9939@gmail.com">funstream9939@gmail.com</a></p>
+        </div>
+
+        <div class="cta" style="margin-top:16px">
+          <h3>Phone</h3>
+          <p class="muted">Call or WhatsApp us at:</p>
+          <p><strong>+91 9939494099</strong></p>
+        </div>
+
+        <h2 style="margin-top:24px">Quick contact form</h2>
+        <form id="contactForm" class="card" style="margin-top:12px">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Say hello…" rows="5" required></textarea>
+
+          <button type="submit" class="btn btn-primary" style="margin-top:10px">Send via email</button>
+        </form>
+
+        <script>
+          // Simple mailto fallback for static sites
+          const form = document.getElementById('contactForm');
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = encodeURIComponent(document.getElementById('name').value.trim());
+            const email = encodeURIComponent(document.getElementById('email').value.trim());
+            const message = encodeURIComponent(document.getElementById('message').value.trim());
+            const to = 'funstream9939@gmail.com'; // placeholder Gmail
+            const subject = encodeURIComponent(`FunStream contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+            window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+          });
+        </script>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>FunStream</strong><p class="muted">Movies • Music • Gaming • Celebrity News</p></div>
+      <nav class="footer-nav" aria-label="Footer"><a href="/privacy.html">Privacy</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
+      <p class="muted">© 2025 FunStream</p>
+    </div>
+  </footer>
+</body>
+  </html>
