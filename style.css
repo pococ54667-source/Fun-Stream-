@@ -124,7 +124,9 @@ a:hover { text-decoration: underline; }
   color: #888;
   font-size: 0.85rem;
   margin-top: 10px;
-  }
+}
+
+/* Trending Bar */
 .trending-bar {
   background: #00e0ff;
   color: #000;
@@ -132,4 +134,33 @@ a:hover { text-decoration: underline; }
   padding: 6px 12px;
   font-size: 0.85rem;
   border-bottom: 1px solid #004466;
+}
+
+/* ✅ Search Box */
+.search-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+.search-box::placeholder {
+  color: #888;
+}
+
+/* ✅ Social Links */
+.social-links {
+  margin: 10px 0;
+}
+.social-links a {
+  color: #00e0ff;
+  margin: 0 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.social-links a:hover {
+  text-decoration: underline;
   }
